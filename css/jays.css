@@ -20,13 +20,14 @@ p
 .school-experience
 {
 	position:absolute;
-	top:220px;
+	float: left;
+	top:215px;
 }
 .myinfo
 {
 	position:absolute;
-	top:50px;
-	left:480px
+	top:5%;
+	left:33%;
 }
 .work-experience
 {
