@@ -15,7 +15,7 @@
             height: 36px;
         }
         button {
-            background-color: paleturquoise;
+            background-color: white;
         }
         hr {
             height: 7px;
@@ -28,13 +28,94 @@
             margin-left:45px;
             font-size:21px;
         }
+
+        /* Style the navigation menu */
+        .topnav {
+          position: absolute;
+          right: 0px;
+          top: 0px;
+        }
+
+        /* Hide the links inside the navigation menu (except for logo/home) */
+        .topnav #myLinks {
+          display: none;
+        }
+
+        /* Style navigation menu links */
+        .topnav a {
+          color: white;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 15px;
+          display: block;
+        }
+
+        /* Style the hamburger menu */
+        .topnav a.icon {
+          background: paleturquoise;
+          display: block;
+          position: absolute;
+          right: 0px;
+          top: 10px;
+          font-size: 34px;
+          color: black;
+        }
+
+        /* Add a grey background color on mouse-over */
+        .topnav a:hover {
+          background-color: paleturquoise;
+          color: black;
+        }
+
+        #myLinks {
+            background-color: black;
+        }
+
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <h1>The Straight Shooter | Honest takes about the NBA</h1>
-<button title="Return to homepage" style="font-size: 65px; position: absolute; right: 0px; top: 0px;" class="btn"><a href="Blog.html"><i class="fa fa-home"></i></a></button>
+<button title="Return to homepage" id="homeButton" style="font-size: 65px; position: absolute; right: 65px; top: 0px;" class="btn"><a href="Blog.html"><i class="fa fa-home"></i></a></button>
+
+<div class="topnav">
+  <div id="myLinks">
+    <a href="Post2.html">Why I would start a team with Jaylen Brown over Jayson Tatum</a>
+  </div>
+  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+  <a href="javascript:void(0);" id="hamburger" class="icon" onclick="myFunction()" title="See other posts">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
 <hr>
 <br>
+<script>
+    function myFunction() {
+      var x = document.getElementById("myLinks");
+      var home_button = document.getElementById("homeButton");
+      var hamburger = document.getElementById("hamburger");
+      var p = document.getElementsByTagName("p");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+        home_button.style.visibility = "visible";
+        hamburger.style.right = "0px";
+        homeButton.style.right = "65px";
+        console.log(p);
+        for (i = 0; i < p.length; i++) {
+            p[i].style.marginRight = "80px";
+        }
+      } else {
+        x.style.display = "block";
+        x.style.height = parseInt(window.innerHeight) + "px";
+        hamburger.style.right = "420px";
+        homeButton.style.right = "490px";
+        console.log(p);
+        for (i = 0; i < p.length; i++) {
+            p[i].style.marginRight = "450px";
+        }
+      }
+    }
+</script>
 <div class="blog-post">
     <center><h2>Are the Warriors done?</h2></center>
     <center><h2>Posted: December 29, 2020</h2></center>
